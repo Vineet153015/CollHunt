@@ -1,23 +1,21 @@
-
 import 'package:flutter/material.dart';
 
 class CurvedTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 225, // The desired height of the top bar
+      height: 225,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xFF0E3C6E), // Background color
+        color: Color(0xFF0E3C6E),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30), // Adjust this for the desired curve
-          bottomRight: Radius.circular(30), // Adjust this for the desired curve
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
         ),
       ),
       child: SafeArea(
         child: Stack(
           children: [
-            // Add any content inside the top bar here
             Positioned(
               top: 16,
               left: 16,
@@ -43,7 +41,6 @@ class CurvedTopBar extends StatelessWidget {
                 ],
               ),
             ),
-            // You can add a notification icon or other elements
             Positioned(
               top: 16,
               right: 16,
@@ -52,7 +49,6 @@ class CurvedTopBar extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            // Add a search bar at the bottom of the container
             Positioned(
               bottom: 16,
               left: 16,
@@ -62,7 +58,7 @@ class CurvedTopBar extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(25), // Rounded search bar
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
                   children: [
@@ -88,55 +84,53 @@ class CurvedTopBar extends StatelessWidget {
   }
 }
 
-class TopBarSearchOnly extends StatelessWidget{
-  const TopBarSearchOnly({super.key
-  });
+class TopBarSearchOnly extends StatelessWidget {
+  const TopBarSearchOnly({super.key});
 
   @override
   Widget build(BuildContext context) => Container(
-      height: 155, // The desired height of the top bar
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Color(0xFF0E3C6E), // Background color
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30), // Adjust this for the desired curve
-          bottomRight: Radius.circular(30), // Adjust this for the desired curve
+        height: 155,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xFF0E3C6E),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
         ),
-      ),
-      child: SafeArea(
-        child: Stack(
-          children: [
-            // Add a search bar at the bottom of the container
-            Positioned(
-              bottom: 16,
-              left: 16,
-              right: 16,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25), // Rounded search bar
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.search, color: Colors.grey),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "Search for colleges, schools...",
-                          border: InputBorder.none,
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Positioned(
+                bottom: 16,
+                left: 16,
+                right: 16,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.search, color: Colors.grey),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: "Search for colleges, schools...",
+                            border: InputBorder.none,
+                          ),
                         ),
                       ),
-                    ),
-                    Icon(Icons.mic, color: Colors.blue),
-                  ],
+                      Icon(Icons.mic, color: Colors.blue),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
 }

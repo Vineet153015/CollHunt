@@ -18,7 +18,6 @@ class _CollegelistscreenState extends State<Collegelistscreen> {
     setState(() {
       _currentIndex = index;
     });
-    // Handle navigation here based on the index
   }
 
   @override
@@ -49,7 +48,8 @@ class _CollegelistscreenState extends State<Collegelistscreen> {
                       Viewers: '468+',
                       Grade: '4.3',
                     NoStudents: "More than 1000+ students have been placed",
-                  ),CollegeCard(
+                  ),
+                  CollegeCard(
                       context: context,
                       title: 'Bachelor of Technology',
                       description:

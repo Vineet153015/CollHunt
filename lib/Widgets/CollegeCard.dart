@@ -25,7 +25,6 @@ class CollegeCardWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: InkWell(
         onTap: () {
-          // Show popup when tapped
           showModalBottomSheet(
             context: context,
             backgroundColor: Colors.white,
@@ -48,7 +47,6 @@ class CollegeCardWidget extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              // Background Image
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
@@ -58,7 +56,6 @@ class CollegeCardWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              // Semi-transparent overlay
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -71,7 +68,6 @@ class CollegeCardWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              // Text content
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -96,7 +92,6 @@ class CollegeCardWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              // Bottom right text
               Positioned(
                 child: Align(
                   alignment: Alignment.bottomRight,

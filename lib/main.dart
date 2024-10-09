@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
             seedColor: Color(0xFF0E3C6E),
-          surfaceTint: Colors.blue
+          surfaceTint: Colors.black
         ),
       ),
       home: const HomeScreen(),

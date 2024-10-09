@@ -1,6 +1,5 @@
-
 import 'package:collhunt/Screens/CollegeListScreen.dart';
-import 'package:collhunt/Widgets/CollegeList.dart';
+
 import 'package:flutter/material.dart';
 
 class SortByPopup extends StatefulWidget {
@@ -9,7 +8,6 @@ class SortByPopup extends StatefulWidget {
 }
 
 class _SortByPopupState extends State<SortByPopup> {
-  // Store the selected index
   int _selectedIndex = -1;
 
   @override
@@ -52,23 +50,20 @@ class _SortByPopupState extends State<SortByPopup> {
       leading: Icon(icon),
       title: Text(title),
       trailing: Icon(
-        // Change icon based on selection state
         _selectedIndex == index
             ? Icons.radio_button_checked
             : Icons.radio_button_unchecked,
         color: _selectedIndex == index ? Colors.blue : Colors.grey,
       ),
       onTap: () {
-        // Update the selected index and refresh UI
         setState(() {
           _selectedIndex = index;
         });
 
-        // Navigate to the new page based on the selected index
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Collegelistscreen(), // Pass title to new page
+            builder: (context) => Collegelistscreen(),
           ),
         );
       },
