@@ -55,7 +55,7 @@ class CollegeCard extends StatelessWidget {
                   left: 10,
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
-                    child: Icon(Icons.share, color: Colors.black),
+                    child: Icon(Icons.share_sharp, color: Colors.black),
                   ),
                 ),
                 Positioned(
@@ -63,7 +63,7 @@ class CollegeCard extends StatelessWidget {
                   right: 10,
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
-                    child: Icon(Icons.bookmark, color: Colors.black),
+                    child: Icon(Icons.bookmark_border_outlined, color: Colors.black),
                   ),
                 ),
               ],
@@ -149,45 +149,49 @@ class CollegeCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
+                  Divider(
+                    color: Colors.grey, // Line color
+                    thickness: 1, // Line thickness
+                    height: 20, // Space around the line
+                  ),
 
                   // Students Info Row
                   Row(
                     children: [
-                      Icon(
-                        Icons.school,
-                        size: 20,
-                        color: Colors.grey.shade600,
+                      Image.asset(
+                        'assets/images/like.png',
+                        height: 20,
+                        width: 20,
                       ),
                       const SizedBox(width: 5),
                       Text(
                         NoStudents,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           color: Colors.grey.shade600,
                         ),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-
-                      // Views Row
+                      SizedBox(width: 40),
                       Row(
                         children: [
                           Icon(
                             Icons.visibility,
-                            size: 20,
+                            size: 15,
                             color: Colors.grey.shade600,
                           ),
-                          const SizedBox(width: 5),
+
                           Text(
                             Viewers,
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               color: Colors.grey.shade600,
                             ),
                           ),
                         ],
                       ),
+                    ],
+                  ),
+
                     ],
                   ),
             )

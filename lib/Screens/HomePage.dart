@@ -1,9 +1,24 @@
+import 'package:collhunt/Widgets/BottomNavigationWidget.dart';
 import 'package:collhunt/Widgets/CollegeCard.dart';
 import 'package:collhunt/Widgets/TopBarShape.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  int _currentIndex = 0;
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    // Handle navigation here based on the index
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,32 +66,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF0E3C6E),
-        currentIndex: 0, // Set the selected tab
-        onTap: (index) {},
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_add_sharp),
-            label: 'Saved',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.circle_outlined),
-            label: 'Saved',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Account',
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: _currentIndex, onTap: _onTabTapped ,)
     );
   }
 }

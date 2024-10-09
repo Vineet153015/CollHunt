@@ -63,6 +63,7 @@ flutter:
     - assets/images/1.jpeg
     - assets/images/2.jpeg
     - assets/images/3.jpeg
+    - assets/images/like.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
